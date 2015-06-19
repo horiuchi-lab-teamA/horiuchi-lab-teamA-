@@ -1,0 +1,32 @@
+.clear:after{
+content: "";
+clear: both;
+display: block;
+}
+html,body{
+margin:0;
+padding:0;
+}
+
+div#pageall{
+width:100%;
+height:auto;
+}
+div#pageall div#leftframe{
+width:50%;
+height:auto;
+margin:0;
+padding:0;
+float:left;
+}
+
+div#pageall div#rightframe{
+width:50%;
+height:auto;
+margin:0;
+padding:0;
+float:left;
+}
+.table{
+background-size:contain;
+}
