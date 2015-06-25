@@ -6,9 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="main.css">
 <script type="text/javascript" src="main.js"></script>
   </head>
-  <body>
-		<div id="pageall" class="clear">
-			
+  <body><form name="form">
+		<div id="pageall" class="clear">			
 			<div id="leftframe">
 				<p>弁当メニュー選択システムへようこそ！</P>
 				<p>ここでは，あなたの好みに応じた弁当のメニューを選択できます！</p><br />
@@ -21,7 +20,7 @@
 				</ol>
 				<table border="1" cellspacing="0">
 					<tr>　
-						<td class="table" name="gazou" valign="top" rowspan="2" width="150" height="400" background="img/kurigohan.jpg" >主食・ごはん
+						<td id="gazou1" name="gazou1" valign="top" rowspan="2" >主食・ごはん<br />
 <!主食　プルダウン> 
 							<?php
 								$link = mysql_connect("localhost", "root", "pass");
@@ -37,15 +36,14 @@
 								mysql_free_result($result);
 								mysql_close($link);
 							?>
-<P id="comt" style="font-weight : bold;color : green;">リストを選択してください。</P>
-						</th>
-						<td valign="top" colspan="2" width="200" height="200">おかず①<br />肉類．魚類<br /></th>
+						</td>
+						<td id="gazou2" name="gazou2" valign="top" colspan="2" >おかず①<br />肉類．魚類<br />
 							<?php
 								$link = mysql_connect("localhost", "root", "pass");
 								$db = mysql_select_db("order_system", $link);
 								echo "<form action=\"\" method=\"GET\">";
 								echo "
-									<select onchange=\"Selc1(this)\">";
+									<select name=\"selc1\" onchange=\"Selc1(this)\">";
 								$result = mysql_query("select * from おかず1");
 								while ($row = mysql_fetch_assoc($result)) {
 								echo "<option value=".$row["カロリー"].">"
@@ -54,15 +52,15 @@
 								mysql_free_result($result);
 								mysql_close($link);
 							?>
-					</tr>
+					</td></tr>
 					<tr>
-						 <td valign="top" width="100" height="200">おかず②<br />野菜類
+						 <td id="gazou3" name="gazou3" valign="top">おかず②<br />野菜類
 							<?php
 								$link = mysql_connect("localhost", "root", "pass");
 								$db = mysql_select_db("order_system", $link);
 								echo "<form action=\"\" method=\"GET\">";
 								echo "
-									<select onchange=\"Selc2(this)\">";
+									<select name=\"selc2\" onchange=\"Selc2(this)\">";
 								$result = mysql_query("select * from おかず2");
 								while ($row = mysql_fetch_assoc($result)) {
 								echo "<option value=".$row["カロリー"].">"
@@ -72,13 +70,13 @@
 								mysql_close($link);
 							?>
 			</td>
-			 <td valign="top" width="100" height="200">おかず③<br />その他
+			 <td id="gazou4" name="gazou4" valign="top">おかず③<br />その他
 							<?php
 								$link = mysql_connect("localhost", "root", "pass");
 								$db = mysql_select_db("order_system", $link);
 								echo "<form action=\"\" method=\"GET\">";
 								echo "
-									<select onchange=\"Selc3(this)\">";
+									<select name=\"selc3\" onchange=\"Selc3(this)\">";
 								$result = mysql_query("select * from おかず3");
 								while ($row = mysql_fetch_assoc($result)) {
 								echo "<option value=".$row["カロリー"].">"
@@ -90,21 +88,22 @@
 			 </td>
 			</tr>
 		</table>
+		</form>
 			</div>
 
 			<div id="rightframe">
 					<P>主食・ごはん</P>
-					<p><div id="comt" >0</div>Kcal</P>
+					<p><span id="comt" >0</span>Kcal</P>
 					<P>おかず①</P>
-					<p><div id="comt1">0</div>Kcal</P>
+					<p><span id="comt1">0</span>Kcal</P>
 					<P>おかず②</P>
-					<p><div id="comt2">0</div>Kcal</P>
+					<p><span id="comt2">0</span>Kcal</P>
 					<P>おかず③</P>
-					<p><div id="comt3">0</div>Kcal</P>
-<p id="goukei">合計 
-
-</P>
-
+					<p><span id="comt3">0</span>Kcal</P>
+<p>合計<span id="goukei">0</span>Kcal						一食当たりのカロリー規定値　660Kcal</P>
+<input name="openWin" type="button" value="このメニューで印刷する" onClick="openwin()">
+</input>
+<p id="keikoku"><p>
 			</div>
 		</div>
 	<body>

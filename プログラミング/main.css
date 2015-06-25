@@ -27,6 +27,38 @@ margin:0;
 padding:0;
 float:left;
 }
-.table{
-background-size:contain;
+#gazou1{
+background-image:url(img/back.jpg);
+background-size:450px 400px;
+width:450px;
+height:400px;
+text-shadow: white 1px 1px 0px, white -1px 1px 0px,
+             white 1px -1px 0px, white -1px -1px 0px;
+}
+#gazou2{
+background-image:url(img/back.jpg);
+background-size:300px 200px;
+width:300px;
+height:200px;
+text-shadow: white 1px 1px 0px, white -1px 1px 0px,
+             white 1px -1px 0px, white -1px -1px 0px;
+}
+#gazou3{
+background-image:url(img/back.jpg);
+background-size:150px 200px;
+width:150px;
+height:200px;
+text-shadow: white 1px 1px 0px, white -1px 1px 0px,
+             white 1px -1px 0px, white -1px -1px 0px;
+}
+#gazou4{
+background-image:url(img/back.jpg);
+background-size:150px 200px;
+width:150px;
+height:200px;
+text-shadow: white 1px 1px 0px, white -1px 1px 0px,
+             white 1px -1px 0px, white -1px -1px 0px;
+}
+p#keikoku{
+color:red;
 }
